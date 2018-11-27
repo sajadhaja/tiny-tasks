@@ -1,0 +1,60 @@
+<form novalidate [formGroup]="myform" (submit)="save()">
+    <h1 mat-dialog-title>Create new task</h1>
+    <div mat-dialog-content>
+
+        <table>
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <input matInput placeholder="Name" required formControlName="name">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <input matInput [min]="minDate" required formControlName="duedate" [matDatepicker]="picker" placeholder="Due Date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker disabled="false"></mat-datepicker>
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-select placeholder="Assignee" required formControlName="assignee">
+                            <mat-option *ngFor="let user of usersOptions" [value]="user">{{user}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <span>Priority</span>
+                    <br>
+                    <mat-radio-group formControlName="priority">
+                        <mat-radio-button *ngFor="let priority of priorityOptions" [value]="priority">{{priority}}</mat-radio-button>
+                    </mat-radio-group>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <input matInput placeholder="Location" formControlName="location">
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field class="txtarea">
+                        <textarea matInput placeholder="Notes" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="3"></textarea>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+        <button mat-raised-button color="accent" type="submit" class="sec-btn">Save</button>
+    </div>
+</form>
+<!--
+  Copyright 2018 Google Inc. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at http://angular.io/license
+-->

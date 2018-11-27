@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
+td.mat-cell:last-of-type,
+th.mat-header-cell:last-of-type {
+  width: 95px !important;
+}
+.btn {
+  padding: 5px !important;
+}
+.btn-second {
+  margin-left: 6px;
+}
+span.btn {
+  cursor: text !important;
+}
+span.btn-primary:hover {
+  background-color: #0f9cf3;
+  border: 1px solid #0f9cf3;
+}
+span.btn-warning:hover {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color:#ffffff;
+}
+span.btn-danger:hover {
+  background-color: #f32f53;
+  border: 1px solid #f32f53;
+}
